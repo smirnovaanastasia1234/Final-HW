@@ -2,8 +2,8 @@
 import pandas as pd
 test = pd.read_csv("test.csv")
 train = pd.read_csv("train.csv")
-test.head(4)
-train.head(4)
+print(test.head(4))
+print(train.head(4))
 #если pandas, то
-test.describe()
-train.describe()
+print (test.describe())
+print (train.describe())
