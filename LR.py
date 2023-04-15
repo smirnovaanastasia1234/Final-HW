@@ -26,9 +26,8 @@ def prepare_data(X) :
     features = cv.fit_transform(X.text_sent)
     return X, features
 X, features = prepare_data(X)
-features.toarray()
 #Обучение модели
-logreg = LogisticRegression()
+logreg = LogisticRegression(max_iter=1000)
 trainX, testX, trainY, testY = train_test_split(features, y, test_size=0.3, stratify=y, random_state=42)
 logreg.fit(features, y)
 #Сохранение обученной модели
