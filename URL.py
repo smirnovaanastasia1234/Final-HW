@@ -17,7 +17,17 @@ def load_model():
     model = pickle.load(movies)
     return model
 
-result = st.button('🤗Распознать')
+st.title('Фейковые ссылки')
+title = st.text_input('Введите ссылку', value='', key='input_url')
+
+st.button("Проверить")
+
+#Загрузка модели
+@st.cache(allow_output_mutation=True)
+def load_model():
+    with open('myfile.pkl','rb') as movies: 
+        model = pickle.load(movies)
+    return model
 
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
