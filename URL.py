@@ -18,7 +18,6 @@ def load_model():
         model = pickle.load(movies)
     return model
 
-result = st.button('🤗Определить СПАМ')
 
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
