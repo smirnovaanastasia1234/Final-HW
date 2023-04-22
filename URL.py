@@ -8,7 +8,7 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
-title = st.text_input('Введите ссылку', value='https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html', key='input_url')
+title = st.text_input('Введите ссылку', value='', key='input_url')
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
@@ -17,7 +17,7 @@ def load_model():
     model = pickle.load(movies)
     return model
 
-result = st.sidebar.button('🤗Распознать')
+result = st.button('🤗Распознать')
 
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
