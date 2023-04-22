@@ -1,21 +1,11 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import numpy as np 
-import nltk
+import numpy as np
+import nltk as nl 
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
-
-st.title('Фейковые ссылки')
-title = st.text_input('Введите ссылку', value='', key='input_url')
-
-#Загрузка модели
-@st.cache(allow_output_mutation=True)
-def load_model():
-    movies = pickle.load(open('myfile.pkl','rb'))
-    model = pickle.load(movies)
-    return model
 
 st.title('Фейковые ссылки')
 title = st.text_input('Введите ссылку', value='', key='input_url')
@@ -49,12 +39,14 @@ def prepare_data(title, non_optional_func=None):
     features = cv.fit_transform(X.text_sent)
     return X, features
 
-X, features = prepare_data(title)
+X, features= prepare_data(title)
 
-if result and features is not None:
-    model = load_model()
-    y_pred = model.predict(features)
-    if y_pred[0] == 0:
-        st.write('Это не спам!')
+model = load_model()
+
+if st.button("Проверить"):
+    X, features= prepare_data(title)
+    pred = model.predict(X, features)
+    if pred == 1:
+        st.write("Этот URL является безопасным")
     else:
-        st.write('Это спам!')
+        st.write("Этот URL является вредоносным")
