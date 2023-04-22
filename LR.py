@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np 
+import nltk as nl 
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -33,7 +34,7 @@ def prepare_data(X) :
     return X, features
 X, features = prepare_data(X)
 #Обучение модели
-logreg = LogisticRegression(max_iter=1000)
+logreg = LogisticRegression(max_iter=100000)
 trainX, testX, trainY, testY = train_test_split(features, y, test_size=0.3, stratify=y, random_state=42)
 logreg.fit(features, y)
 
@@ -49,17 +50,6 @@ print(metrics.classification_report(predict, testY))
 
 print("\n\nAccuracy Score:", metrics.accuracy_score(testY, predict).round(2)*100, "%")
 
-#Полно
-
-mat = confusion_matrix(ytest, ypred)
-
-sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
-
-plt.xlabel('true label')
-
-plt.ylabel('predicted label');
-
-plt.savefig(confusion_matrix_file)
 
 
 
