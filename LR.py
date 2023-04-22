@@ -1,5 +1,5 @@
 import pandas as pd
-import numpy as np
+import numpy as np 
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 from sklearn.feature_extraction.text import CountVectorizer
@@ -7,6 +7,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, precision_score, recall_score, confusion_matrix
 import pickle
+# Visualization
+from sklearn import metrics
+from sklearn.metrics import confusion_matrix
+import matplotlib.pyplot as plt
+import seaborn as sns
+
 #Загрузка данных
 df = pd.read_csv("train.csv")
 print(df.shape)
@@ -30,7 +36,34 @@ X, features = prepare_data(X)
 logreg = LogisticRegression(max_iter=1000)
 trainX, testX, trainY, testY = train_test_split(features, y, test_size=0.3, stratify=y, random_state=42)
 logreg.fit(features, y)
+
 #Сохранение обученной модели
 with open('myfile.pkl', 'wb') as output:
     pickle.dump(logreg, output)
+
+#Оценка модели
+
+predict= logreg.predict(testX)
+
+print(metrics.classification_report(predict, testY))
+
+print("\n\nAccuracy Score:", metrics.accuracy_score(testY, predict).round(2)*100, "%")
+
+#Полно
+
+mat = confusion_matrix(ytest, ypred)
+
+sns.heatmap(mat.T, square=True, annot=True, fmt='d', cbar=False)
+
+plt.xlabel('true label')
+
+plt.ylabel('predicted label');
+
+plt.savefig(confusion_matrix_file)
+
+
+
+
+
+
 
