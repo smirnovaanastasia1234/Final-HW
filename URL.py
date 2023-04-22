@@ -10,7 +10,6 @@ from nltk.stem.snowball import SnowballStemmer
 st.title('Фейковые ссылки')
 title = st.text_input('Введите ссылку', value='')
 
-st.button("Проверить")
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
@@ -18,6 +17,8 @@ def load_model():
     with open('myfile.pkl','rb') as movies: 
         model = pickle.load(movies)
     return model
+
+result = st.button('🤗Определить СПАМ')
 
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
