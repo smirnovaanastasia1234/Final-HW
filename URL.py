@@ -8,7 +8,7 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
-title = st.text_input('Введите ссылку', value='', key='input_url')
+title = st.text_input('Введите ссылку', value='')
 
 st.button("Проверить")
 
