@@ -6,7 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 st.title('Фейковые ссылки')
-title = st.text_input('Введите ссылку', value='https://scikit-learn.org/stable/modules/generated/sklearn.metrics.confusion_matrix.html')
+title = st.text_input('Введите ссылку', value='')
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
