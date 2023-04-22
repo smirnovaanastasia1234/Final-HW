@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np 
+import nltk
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
