@@ -1,14 +1,22 @@
 import streamlit as st
 import pickle
 import pandas as pd
+
+import numpy as np 
+
 import numpy as np
 import nltk as nl 
+
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
+
+title = st.text_input('Введите ссылку')
+
 title = st.text_input('Введите ссылку', value='')
+
 
 
 #Загрузка модели
@@ -19,17 +27,24 @@ def load_model():
     return model
 
 
+
+
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
 df = pd.DataFrame(data)
 X = df[['url']].copy()
+
 
 tokenizer = RegexpTokenizer(r'[A-Za-z]+') #[a-zA-Z]обозначает один символ от a до z или от A доZ
 stemmer = SnowballStemmer("english")
 cv = CountVectorizer()
 
 #Функция для определения СПАМа
+
+def prepare_data(title):
+
 def prepare_data(title, non_optional_func=None):
+
     if not title:
         return None, None
     X = pd.DataFrame({'url': [title]})
@@ -38,6 +53,17 @@ def prepare_data(title, non_optional_func=None):
     X['text_sent'] = X.text_stemmed.map(lambda t: ' '.join(t)) #Объеденяем список в предложение
     features = cv.fit_transform(X.text_sent)
     return X, features
+
+
+X, features = prepare_data(X)
+
+if result and features is not None:
+    model = load_model()
+    y_pred = model.predict(features)
+    if y_pred[0] == 0:
+        st.write('Это не спам!')
+    else:
+        st.write('Это спам!')
 
 X, features= prepare_data(title)
 
@@ -50,3 +76,4 @@ if st.button("Проверить"):
         st.write("Этот URL является безопасным")
     else:
         st.write("Этот URL является вредоносным")
+
