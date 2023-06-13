@@ -20,7 +20,7 @@ def load_model():
     return model
 
 # создаем датафрейм с колонкой 'url'
-st.cache_data
+
 data = {'url': [title]}
 df = pd.DataFrame(data)
 X = df[['url']].copy()
