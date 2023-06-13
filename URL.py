@@ -9,7 +9,7 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
-title = st.text_input('Введите ссылку', value='')
+title = st.text_input('Введите ссылку')
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
