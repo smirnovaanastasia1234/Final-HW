@@ -30,8 +30,6 @@ cv = CountVectorizer()
 
 #Функция для определения СПАМа
 
-def prepare_data(title):
-
 def prepare_data(title, non_optional_func=None):
     if not title:
         return None, None
@@ -41,17 +39,6 @@ def prepare_data(title, non_optional_func=None):
     X['text_sent'] = X.text_stemmed.map(lambda t: ' '.join(t)) #Объеденяем список в предложение
     features = cv.fit_transform(X.text_sent)
     return X, features
-
-
-X, features = prepare_data(X)
-
-if result and features is not None:
-    model = load_model()
-    y_pred = model.predict(features)
-    if y_pred[0] == 0:
-        st.write('Это не спам!')
-    else:
-        st.write('Это спам!')
 
 X, features= prepare_data(title)
 
