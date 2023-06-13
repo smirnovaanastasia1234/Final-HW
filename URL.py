@@ -13,7 +13,7 @@ st.title('Фейковые ссылки')
 title = st.text_input('Введите ссылку')
 
 #Загрузка модели
-@st.cache(allow_output_mutation=True)
+st.cache_resource(allow_output_mutation=True)
 def load_model():
     movies = pickle.load(open('myfile.pkl','rb'))
     model = pickle.load(movies)
@@ -27,7 +27,7 @@ stemmer = SnowballStemmer("english")
 cv = CountVectorizer()
 
 #Функция для определения СПАМа
-@st.cache
+st.cache_resource
 def prepare_data(title):
     if not title:
         return None, None
