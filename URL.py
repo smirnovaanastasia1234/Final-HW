@@ -30,7 +30,7 @@ cv = CountVectorizer()
 
 #Функция для определения СПАМа
 
-def prepare_data(title):
+def prepare_data(title, non_optional_func=None):
     if not title:
         return None, None
     X = pd.DataFrame({'url': [title]})
