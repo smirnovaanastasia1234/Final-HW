@@ -37,8 +37,7 @@ def prepare_data(title):
     X['text_sent'] = X.text_stemmed.map(lambda t: ' '.join(t)) #Объеденяем список в предложение
     features = cv.fit_transform(X.text_sent)
     return X, features
-
-X, features = prepare_data(title)
+X, features = prepare_data(X)
 
 if result and features is not None:
     model = load_model()
