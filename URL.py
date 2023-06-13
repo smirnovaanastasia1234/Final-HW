@@ -20,6 +20,7 @@ def load_model():
     return model
 
 # создаем датафрейм с колонкой 'url'
+st.cache_data
 data = {'url': [title]}
 df = pd.DataFrame(data)
 X = df[['url']].copy()
@@ -40,14 +41,12 @@ def prepare_data(title):
     features = cv.fit_transform(X.text_sent)
     return X, features
 
-X, features= prepare_data(title)
+X, features = prepare_data(X)
 
-model = load_model()
-
-if st.button("Проверить"):
-    X, features= prepare_data(title)
-    pred = model.predict(X, features)
-    if pred == 1:
-        st.write("Этот URL является безопасным")
+if result and features is not None:
+    model = load_model()
+    y_pred = model.predict(features)
+    if y_pred[0] == 0:
+        st.write('Это не спам!')
     else:
-        st.write("Этот URL является вредоносным")
+        st.write('Это спам!')
