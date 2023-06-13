@@ -13,7 +13,7 @@ st.title('Фейковые ссылки')
 title = st.text_input('Введите ссылку')
 
 #Загрузка модели
-st.cache_resource(allow_output_mutation=True)
+st.cache_resource
 def load_model():
     movies = pickle.load(open('myfile.pkl','rb'))
     model = pickle.load(movies)
