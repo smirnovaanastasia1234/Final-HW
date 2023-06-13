@@ -1,12 +1,9 @@
 import streamlit as st
 import pickle
 import pandas as pd
-
 import numpy as np 
-
 import numpy as np
 import nltk as nl 
-
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
@@ -76,4 +73,3 @@ if st.button("Проверить"):
         st.write("Этот URL является безопасным")
     else:
         st.write("Этот URL является вредоносным")
-
