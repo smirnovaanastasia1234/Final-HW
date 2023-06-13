@@ -40,6 +40,16 @@ def prepare_data(title):
     return X, features
 
 
+X, features = prepare_data(X)
+
+if result and features is not None:
+    model = load_model()
+    y_pred = model.predict(features)
+    if y_pred[0] == 0:
+        st.write('Это не спам!')
+    else:
+        st.write('Это спам!')
+
 X, features= prepare_data(title)
 
 model = load_model()
