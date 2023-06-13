@@ -38,7 +38,7 @@ def prepare_data(title):
     features = cv.fit_transform(X.text_sent)
     return X, features
 
-X, features = prepare_data(X)
+X, features = prepare_data(title)
 
 if result and features is not None:
     model = load_model()
