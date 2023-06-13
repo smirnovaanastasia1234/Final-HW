@@ -15,10 +15,10 @@ title = st.text_input('Введите ссылку')
 #Загрузка модели
 @st.cache_resource
 def load_model():
-    movies = pickle.load(open('myfile.pkl','rb'))
+    with open('myfile.pkl','rb') as movies: 
     model = pickle.load(movies)
     return model
-
+   
 result = st.button('🤗Распознать')
 
 
