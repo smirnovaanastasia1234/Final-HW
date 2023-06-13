@@ -41,12 +41,14 @@ def prepare_data(title):
     features = cv.fit_transform(X.text_sent)
     return X, features
 
-X, features = prepare_data(X)
+X, features= prepare_data(title)
 
-if result and features is not None:
-    model = load_model()
-    y_pred = model.predict(features)
-    if y_pred[0] == 0:
-        st.write('Это не спам!')
+model = load_model()
+
+if st.button("Проверить"):
+    X, features= prepare_data(title)
+    pred = model.predict(X, features)
+    if pred == 1:
+        st.write("Этот URL является безопасным")
     else:
-        st.write('Это спам!')
+        st.write("Этот URL является вредоносным")
