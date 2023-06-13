@@ -27,7 +27,7 @@ stemmer = SnowballStemmer("english")
 cv = CountVectorizer()
 
 #Функция для определения СПАМа
-
+@st.cache
 def prepare_data(title):
     if not title:
         return None, None
