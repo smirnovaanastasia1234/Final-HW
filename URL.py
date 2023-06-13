@@ -9,7 +9,10 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
+
 title = st.text_input('Введите ссылку')
+
+title = st.text_input('Введите ссылку', value='')
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
@@ -30,6 +33,8 @@ cv = CountVectorizer()
 #Функция для определения СПАМа
 
 def prepare_data(title):
+
+def prepare_data(title, non_optional_func=None):
     if not title:
         return None, None
     X = pd.DataFrame({'url': [title]})
