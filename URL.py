@@ -10,14 +10,16 @@ from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
 
-title = st.text_input('Введите ссылку', value='')
+title = st.text_input('Введите ссылку')
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
 def load_model():
-    with open('myfile.pkl','rb') as movies: 
-        model = pickle.load(movies)
+    movies = pickle.load(open('myfile.pkl','rb'))
+    model = pickle.load(movies)
     return model
+
+result = st.button('🤗Распознать')
 
 # создаем датафрейм с колонкой 'url'
 
@@ -41,14 +43,12 @@ def prepare_data(title):
     features = cv.fit_transform(X.text_sent)
     return X, features
 
-X, features= prepare_data(title)
+X, features = prepare_data(X)
 
-model = load_model()
-
-if st.button("Проверить"):
-    X, features= prepare_data(title)
-    pred = model.predict(X, features)
-    if pred == 1:
-        st.write("Этот URL является безопасным")
+if result and features is not None:
+    model = load_model()
+    y_pred = model.predict(features)
+    if y_pred[0] == 0:
+        st.write('Это не спам!')
     else:
-        st.write("Этот URL является вредоносным")
+        st.write('Это спам!')
