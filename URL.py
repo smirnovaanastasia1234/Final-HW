@@ -9,12 +9,8 @@ from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 
 st.title('Фейковые ссылки')
-
 title = st.text_input('Введите ссылку')
-
 title = st.text_input('Введите ссылку', value='')
-
-
 
 #Загрузка модели
 @st.cache(allow_output_mutation=True)
@@ -23,14 +19,10 @@ def load_model():
         model = pickle.load(movies)
     return model
 
-
-
-
 # создаем датафрейм с колонкой 'url'
 data = {'url': [title]}
 df = pd.DataFrame(data)
 X = df[['url']].copy()
-
 
 tokenizer = RegexpTokenizer(r'[A-Za-z]+') #[a-zA-Z]обозначает один символ от a до z или от A доZ
 stemmer = SnowballStemmer("english")
@@ -39,9 +31,6 @@ cv = CountVectorizer()
 #Функция для определения СПАМа
 
 def prepare_data(title):
-
-def prepare_data(title, non_optional_func=None):
-
     if not title:
         return None, None
     X = pd.DataFrame({'url': [title]})
