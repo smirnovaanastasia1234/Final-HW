@@ -21,11 +21,6 @@ def load_model():
 
 result = st.button('🤗Распознать')
 
-# создаем датафрейм с колонкой 'url'
-
-data = {'url': [title]}
-df = pd.DataFrame(data)
-X = df[['url']].copy()
 
 tokenizer = RegexpTokenizer(r'[A-Za-z]+') #[a-zA-Z]обозначает один символ от a до z или от A доZ
 stemmer = SnowballStemmer("english")
