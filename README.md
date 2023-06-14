@@ -8,6 +8,6 @@
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)]([https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/]
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-te-hello-tseu9h.streamlit.app/)
 
 
