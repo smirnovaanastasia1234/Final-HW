@@ -20,4 +20,4 @@ Web-приложение разделяет сайты на 2 категории
 
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
-* [Ссылка на документацию scikit-learn]([https://scikit-learn.org/])
+* [Ссылка на документацию scikit-learn](https://scikit-learn.org/)
