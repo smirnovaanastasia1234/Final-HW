@@ -34,12 +34,15 @@ pip install matplotlib
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/)
 
-## Результаты работы модели машинного обучения
+## Метрики и оценки модели машинного обучения
 
-![Accurancy](images/accurancy.jpg "Accurancy")
+* метрики и оценки модели машинного обучения
+ ![Accurancy](images/accurancy.jpg "Accurancy")
 
+**визуализация
 ![train](images/train.jpg "train")
 
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
 * [Ссылка на документацию scikit-learn](https://scikit-learn.org/)
+
