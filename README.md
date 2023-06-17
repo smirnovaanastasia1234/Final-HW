@@ -18,6 +18,8 @@ Web-приложение разделяет сайты на 2 категории
 ## Результаты работы приложения
 Несколько примеров работы приложения:
 
+![Alt-текст](https://drive.google.com/drive/folders/1Mrds0Li8MjKJyTASLoB2SES-RxMs_xMO)
+
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
 * [Ссылка на документацию scikit-learn](https://scikit-learn.org/)
