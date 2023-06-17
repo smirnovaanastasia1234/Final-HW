@@ -25,6 +25,8 @@ pip install numpy
 pip install pandas
 pip install scikit-learn
 pip install nltk
+pip install pickle
+pip install matplotlib
 ```
 
 ## Streamlit app
