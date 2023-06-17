@@ -24,6 +24,6 @@ if result:
     model = load_model()
     y_pred = model.predict(title)
     if y_pred[0] == 0:
-        st.write("Этот URL является безопасным")
+        st.success("Этот URL является безопасным",icon="✅")
     else:
-         st.write("Этот URL является вредоносным")
+         st.warning("Этот URL является вредоносным", icon="⚠️")
