@@ -36,8 +36,9 @@ pip install matplotlib
 
 ## Результаты работы модели машинного обучения
 
-* в приложении представлен визуальный анализ сообщений: 
-![Accurancy](images/accurancy.png "accurancy")
+* в приложении представлен визуальный анализ сообщений:
+
+![Accurancy](images/accurancy.png "Accurancy")
 
 
 ## Используемая литература
