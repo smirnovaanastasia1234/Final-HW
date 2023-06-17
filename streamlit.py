@@ -25,5 +25,8 @@ if result:
     y_pred = model.predict(title)
     if y_pred[0] == 0:
         st.success("Этот URL является безопасным",icon="✅")
+        class = Image.open('images/class.jpg')
+        class = np.array(class)
+        st.image(class)
     else:
          st.warning("Этот URL является вредоносным", icon="⚠️")
