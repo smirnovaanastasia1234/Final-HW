@@ -40,7 +40,7 @@ pip install matplotlib
   
 ![Accurancy](images/accurancy.jpg "Accurancy")
 
-*визуализация
+* визуализация
 
 ![train](images/train.jpg "train")
 
