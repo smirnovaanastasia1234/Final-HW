@@ -2,8 +2,7 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np 
-import numpy as np
-import nltk as nl 
+import nltk as nlt 
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
@@ -11,16 +10,17 @@ from nltk.stem.snowball import SnowballStemmer
 st.title('Фейковые ссылки')
 
 title = st.text_input('Введите ссылку')
-
+title = [title]
 #Загрузка модели
-@st.cache_resource
+@st.cache(allow_output_mutation=True)
 def load_model():
-    with open('myfile.pkl','rb') as movies: 
-        model = pickle.load(movies)
+    model = pickle.load(open('phish.pkl', 'rb'))
     return model
-   
-result = st.button('🤗Распознать')
 
+model = load_model()
+result = st.sidebar.button('🤗Распознать')
+label = model.predict(title)
+st.write(label)  
 
 tokenizer = RegexpTokenizer(r'[A-Za-z]+') #[a-zA-Z]обозначает один символ от a до z или от A доZ
 stemmer = SnowballStemmer("english")
