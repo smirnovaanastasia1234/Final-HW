@@ -36,10 +36,9 @@ pip install matplotlib
 
 ## Результаты работы модели машинного обучения
 
-* в приложении представлен визуальный анализ сообщений:
-
 ![Accurancy](images/accurancy.jpg "Accurancy")
 
+![train test](images/accurancy.jpg "train test")
 
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
