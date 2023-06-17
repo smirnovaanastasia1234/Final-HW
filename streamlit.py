@@ -6,7 +6,7 @@ st.title('Фейковые ссылки')
 title = st.text_input('Введите ссылку', 'вот тут')
 title = [title]
 # Загрузка модели
-@st.cache_data(allow_output_mutation=True)
+@st.cache_data
 def load_model():
     model = pickle.load(open('phish.pkl', 'rb'))
     return model
