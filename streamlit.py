@@ -28,3 +28,4 @@ if result:
         st.image('images/class.jpg')
     else:
          st.warning("Этот URL является вредоносным", icon="⚠️")
+         st.image('images/warnings.png')
