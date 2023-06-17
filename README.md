@@ -10,6 +10,16 @@ Web-приложение разделяет сайты на 2 категории
 Это не спам!
 Это спам!
 
+# Установить  библиотеки :
+```python
+pip install streamlit
+pip install protobuf
+pip install numpy
+pip install pandas
+pip install scikit-learn
+pip install nltk
+```
+
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
 
