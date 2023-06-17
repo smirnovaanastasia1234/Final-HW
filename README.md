@@ -38,7 +38,7 @@ pip install matplotlib
 
 ![Accurancy](images/accurancy.jpg "Accurancy")
 
-![train test](images/train.jpg "train test")
+![train](images/train.jpg "train")
 
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
