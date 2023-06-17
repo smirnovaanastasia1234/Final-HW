@@ -13,7 +13,7 @@ Web-приложение разделяет сайты на 2 категории
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
 
-[![Streamlit App]((https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/))
+[![Streamlit App](https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/)
 
 ## Результаты работы приложения
 Несколько примеров работы приложения:
