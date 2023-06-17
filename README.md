@@ -37,7 +37,8 @@ pip install matplotlib
 ## Метрики и оценки модели машинного обучения
 
 * метрики и оценки модели машинного обучения
- ![Accurancy](images/accurancy.jpg "Accurancy")
+  
+![Accurancy](images/accurancy.jpg "Accurancy")
 
 **визуализация
 ![train](images/train.jpg "train")
