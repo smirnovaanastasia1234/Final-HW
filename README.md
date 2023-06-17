@@ -29,8 +29,7 @@ pip install nltk
 
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
-
-[![Streamlit App](https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/)
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/)
 
 ## Результаты работы приложения
 Несколько примеров работы приложения:
