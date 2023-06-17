@@ -38,7 +38,7 @@ pip install matplotlib
 
 * в приложении представлен визуальный анализ сообщений:
 
-![Accurancy](images/accurancy.png "Accurancy")
+![Accurancy](images/accurancy.jpg "Accurancy")
 
 
 ## Используемая литература
