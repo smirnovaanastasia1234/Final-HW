@@ -28,6 +28,13 @@ pip install nltk
 pip install pickle
 pip install matplotlib
 ```
+## Модель машинного обучения :
+
+```
+pipeline_ls = make_pipeline(CountVectorizer(tokenizer = RegexpTokenizer(r'[A-Za-z]+').tokenize, stop_words='english'),LogisticRegression())
+trainX, testX, trainY, testY = train_test_split(df.url, df.Predicted)
+pipeline_ls.fit(trainX,trainY)
+```
 
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
