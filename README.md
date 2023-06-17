@@ -28,18 +28,30 @@ pip install nltk
 pip install pickle
 pip install matplotlib
 ```
+## Модель машинного обучения :
+
+```
+pipeline_ls = make_pipeline(CountVectorizer(tokenizer = RegexpTokenizer(r'[A-Za-z]+').tokenize, stop_words='english'),LogisticRegression())
+trainX, testX, trainY, testY = train_test_split(df.url, df.Predicted)
+pipeline_ls.fit(trainX,trainY)
+```
 
 ## Streamlit app
 Приложение можно найти, щелкнув по значку Streamlit
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://smirnovaanastasia1234-final-hw-streamlit-sq0yb0.streamlit.app/)
 
-## Результаты работы модели машинного обучения
+## Метрики и оценки модели машинного обучения
 
+* метрики и оценки модели машинного обучения
+  
 ![Accurancy](images/accurancy.jpg "Accurancy")
 
-![train test](images/train.jpg "train test")
+* визуализация
+
+![train](images/train.jpg "train")
 
 ## Используемая литература
 * [Ссылка на документацию streamlit](https://docs.streamlit.io/)
 * [Ссылка на документацию scikit-learn](https://scikit-learn.org/)
+
