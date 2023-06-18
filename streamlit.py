@@ -2,7 +2,6 @@ import streamlit as st
 import pickle
 import numpy as np
 from PIL import Image
-import time
 
 st.header("Добро пожаловать! 👋")
 st.info("Группа 9: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
@@ -24,13 +23,6 @@ def load_model():
 
 
 result = st.button('🤗 Распознать')
-progress_bar = st.progress(0)
-progress_text = st.empty()
-for i in range(101):
-    time.sleep(0.1)
-    progress_bar.progress(i)
-    progress_text.text(f"Progress: {i}%")
-
 if result:
     model = load_model()
     y_pred = model.predict(title)
