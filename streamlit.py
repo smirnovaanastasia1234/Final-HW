@@ -24,9 +24,13 @@ def load_model():
 
 
 result = st.button('🤗 Распознать')
-with st.spinner('Wait for it...'):
-    time.sleep(5)
-st.success('Done!')
+progress_bar = st.progress(0)
+progress_text = st.empty()
+for i in range(101):
+    time.sleep(0.1)
+    progress_bar.progress(i)
+    progress_text.text(f"Progress: {i}%")
+
 if result:
     model = load_model()
     y_pred = model.predict(title)
