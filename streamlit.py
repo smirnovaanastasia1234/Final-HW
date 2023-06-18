@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import numpy as np
 from PIL import Image
+import time
 
 st.header("Добро пожаловать! 👋")
 st.info("Группа 9: Смирнова А., Кожедуб Н., Багаудинов Э., Петраков В.")
