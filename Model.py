@@ -20,7 +20,8 @@ tokenizer = RegexpTokenizer(r'[A-Za-z]+')  # [a-zA-Z]обозначает оди
 stemmer = SnowballStemmer("english")
 cv = CountVectorizer()
 X['text_tokenized'] = X.url.map(lambda t: tokenizer.tokenize(t))  # Разделение на токены
-X['text_stemmed'] = X.text_tokenized.map(lambda t: [stemmer.stem(word) for word in t])  # stemmer приводит слова с одним корнем к одному слову
+# stemmer приводит слова с одним корнем к одному слову
+X['text_stemmed'] = X.text_tokenized.map(lambda t: [stemmer.stem(word) for word in t])
 X['text_sent'] = X.text_stemmed.map(lambda t: ' '.join(t))  # Объединяем список в предложение
 
 pipeline_ls = make_pipeline(
