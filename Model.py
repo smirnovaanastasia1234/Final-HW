@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 from nltk.tokenize import RegexpTokenizer
 from nltk.stem.snowball import SnowballStemmer
 from sklearn.feature_extraction.text import CountVectorizer
