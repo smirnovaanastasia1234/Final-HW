@@ -6,6 +6,7 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix, classification_report
+import pickle
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.pipeline import make_pipeline
