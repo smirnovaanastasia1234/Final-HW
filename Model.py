@@ -44,4 +44,3 @@ print('\nCONFUSION MATRIX')
 plt.figure(figsize= (6,4))
 sns.heatmap(con_mat, annot = True,fmt='d',cmap="YlGnBu")
 pickle.dump(pipeline_ls,open('phish.pkl','wb'))
-
