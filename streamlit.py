@@ -23,6 +23,9 @@ def load_model():
 
 
 result = st.button('🤗 Распознать')
+with st.spinner('Wait for it...'):
+    time.sleep(5)
+st.success('Done!')
 if result:
     model = load_model()
     y_pred = model.predict(title)
