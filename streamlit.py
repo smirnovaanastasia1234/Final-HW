@@ -16,7 +16,7 @@ title = [title]
 
 
 # Загрузка модели
-@st.cache
+@st.cache_data
 def load_model():
     model = pickle.load(open('phish.pkl', 'rb'))
     return model
